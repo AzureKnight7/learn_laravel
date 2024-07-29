@@ -24,7 +24,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', function () {
-    return view('posts',['title' => 'Blog', 'posts' => Post::all()]);
+    return view('components.post',['title' => 'Blog', 'posts' => Post::all()]);
 });
 
 Route::get('/posts/{post:slug}', function (post $post) {
