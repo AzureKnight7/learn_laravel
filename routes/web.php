@@ -20,15 +20,15 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about', ['name' => 'Sandhika Galih', 'title' => 'Contact']);
+    return view('about', ['name' => 'Gadiel Daffa Khayru', 'title' => 'Contact']);
 });
 
 Route::get('/posts', function () {
-    return view('components.post',['title' => 'Blog', 'posts' => Post::all()]);
+    return view('posts',['title' => 'Blog', 'posts' => post::filter(request(['search','category','author']))->latest()->get()]);
 });
 
 Route::get('/posts/{post:slug}', function (post $post) {
-    return view('posts', ['title'=>'Singel Post', 'posts'=> [$post]]);
+    return view('posts', ['title'=>'Single Post', 'posts'=> [$post]]);
 });
 
 Route::get('/authors/{user:username}', function (User $user) {
