@@ -31,6 +31,7 @@
     </div>
   </div>
 
+  {{ $posts->links() }}
 
   <section class="bg-white">
     <div class="py-4 px-4 mx-auto max-w-screen-xl lg:py-4 lg:px-0">
@@ -84,6 +85,8 @@
               </svg>
             </a>
           </div>
+
+
         </article>
         @empty
         <div>
